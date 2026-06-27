@@ -20,7 +20,7 @@ const drawerWidth = 240;
 
 function Sidebar() {
   const menuItems = [
-  { text: "Dashboard", icon: <DashboardIcon /> },
+  { text: "Dashboard", icon: <DashboardIcon />, active: true },
   { text: "Portfolio", icon: <AccountBalanceWalletIcon /> },
   { text: "Stock Universe", icon: <TrendingUpIcon /> },
   { text: "Rebalancing", icon: <AutorenewIcon /> },
@@ -51,17 +51,23 @@ function Sidebar() {
     {menuItems.map((item) => (
       <ListItemButton
         key={item.text}
-        sx={{
-          mx: 1,
-          mb: 1,
-          borderRadius: 2,
-          color: "#CBD5E1",
-
-          "&:hover": {
-            bgcolor: "#1E293B",
-            color: "#3B82F6",
-          },
-        }}
+      sx={{
+        mx: 1,
+       mb: 1,
+       borderRadius: 2,
+       color: item.active ? "#60A5FA" : "#CBD5E1",
+      
+       bgcolor: item.active ? "#1E293B" : "transparent",
+      
+       borderLeft: item.active
+         ? "4px solid #3B82F6"
+         : "4px solid transparent",
+      
+       "&:hover": {
+         bgcolor: "#1E293B",
+         color: "#60A5FA",
+       },
+      }}
       >
         <ListItemIcon
           sx={{
@@ -72,7 +78,12 @@ function Sidebar() {
           {item.icon}
         </ListItemIcon>
 
-        <ListItemText primary={item.text} />
+        <ListItemText
+          primary={item.text}
+          primaryTypographyProps={{
+            fontWeight: item.active ? 600 : 400,
+          }}
+        />
       </ListItemButton>
     ))}
   </List>

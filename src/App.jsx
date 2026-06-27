@@ -2,6 +2,7 @@ import { Box, Toolbar } from "@mui/material";
 
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   return (
@@ -14,12 +15,12 @@ function App() {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          p: 5,
         }}
       >
         <Toolbar />
 
-        <h1>Dashboard</h1>
+        <Dashboard />
       </Box>
     </Box>
   );
