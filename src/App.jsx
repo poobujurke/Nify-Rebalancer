@@ -1,19 +1,26 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
+
+import Navbar from "./components/layout/Navbar";
+import Sidebar from "./components/layout/Sidebar";
 
 function App() {
   return (
-    <Box sx={{ p: 4 }}>
-      <Typography variant="h3" gutterBottom>
-        StockNifty
-      </Typography>
+    <Box sx={{ display: "flex" }}>
+      <Navbar />
 
-      <Typography sx={{ mb: 3 }}>
-        Frontend setup completed successfully 🚀
-      </Typography>
+      <Sidebar />
 
-      <Button variant="contained">
-        Continue
-      </Button>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+        }}
+      >
+        <Toolbar />
+
+        <h1>Dashboard</h1>
+      </Box>
     </Box>
   );
 }
