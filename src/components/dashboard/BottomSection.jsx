@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 
+
 import RecentActivity from "../activity/RecentActivity";
 import AllocationChart from "../charts/AllocationChart";
 
@@ -27,6 +28,7 @@ function BottomSection() {
       >
         <AllocationChart />
       </Grid>
+      
     </Grid>
   );
 }

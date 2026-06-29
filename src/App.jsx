@@ -1,28 +1,40 @@
 import { Box, Toolbar } from "@mui/material";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
+
 import Dashboard from "./components/dashboard/Dashboard";
+import StockTable from "./components/table/StockTable";
 
 function App() {
   return (
-    <Box sx={{ display: "flex" }}>
-      <Navbar />
+    <BrowserRouter>
+      <Box sx={{ display: "flex" }}>
+        <Navbar />
 
-      <Sidebar />
+        <Sidebar />
 
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 5,
-        }}
-      >
-        <Toolbar />
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 5,
+          }}
+        >
+          <Toolbar />
 
-        <Dashboard />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+
+            <Route
+              path="/stock-universe"
+              element={<StockTable />}
+            />
+          </Routes>
+        </Box>
       </Box>
-    </Box>
+    </BrowserRouter>
   );
 }
 
