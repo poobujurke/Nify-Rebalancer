@@ -12,18 +12,14 @@ function BottomSection() {
     >
       <Grid
         size={{ xs: 12, md: 8 }}
-        sx={{
-          display: "flex",
-        }}
+        sx={{ display: "flex" }}
       >
         <RecentActivity />
       </Grid>
 
       <Grid
         size={{ xs: 12, md: 4 }}
-        sx={{
-          display: "flex",
-        }}
+        sx={{ display: "flex" }}
       >
         <AllocationChart />
       </Grid>
